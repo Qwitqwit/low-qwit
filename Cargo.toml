@@ -9,3 +9,7 @@ repository = "https://github.com/Qwitqwit/qwitlib"
 license = "MIT"
 
 [dependencies]
+
+
+[dev-dependencies]
+tempfile = "3"
