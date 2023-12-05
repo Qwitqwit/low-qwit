@@ -1,2 +1,3 @@
-# low-qwit
+# qwitlib
+
 library that does dsv
