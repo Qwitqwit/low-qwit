@@ -45,7 +45,6 @@ pub:
     cargo publish
 
 
-
 release *args: verify
     test $GITHUB_TOKEN
     test $CARGO_REGISTRY_TOKEN
