@@ -7,7 +7,7 @@ trait ToUnixEpoch {
     fn convert(self) -> i64;
 }
 
-pub struct ExcelEpoch(i64);
+pub struct ExcelEpoch(pub i64);
 
 impl ExcelEpoch {
     pub fn as_unix(&self) -> i64 {

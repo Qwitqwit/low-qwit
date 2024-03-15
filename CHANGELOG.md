@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- make excel epoch value public
+
 
 ## [0.2.3] - 2024-03-15
 
