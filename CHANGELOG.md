@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+
+## [0.2.4] - 2024-03-15
+
 - make excel epoch value public
 
 
@@ -15,6 +18,7 @@
 Function to read lines from a path
 Function to read lines from a file
 
-[Unreleased]: https://github.com/Qwitqwit/qwitlib/compare/v0.2.3...HEAD
+[Unreleased]: https://github.com/Qwitqwit/qwitlib/compare/v0.2.4...HEAD
+[0.2.4]: https://github.com/Qwitqwit/qwitlib/compare/v0.2.3...v0.2.4
 [0.2.3]: https://github.com/Qwitqwit/qwitlib/compare/v0.1.2...v0.2.3
 [0.1.2]: https://github.com/Qwitqwit/qwitlib/compare/v0.1.1...v0.1.2
