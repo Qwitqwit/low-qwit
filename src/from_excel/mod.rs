@@ -1,3 +1,5 @@
+use std::fmt::Display;
+
 use crate::epoch_conversion::ExcelEpoch;
 use calamine::{Data, Range};
 
@@ -14,6 +16,12 @@ pub fn write_range(
 
 #[derive(Debug)]
 pub struct CsvError(String);
+
+impl Display for CsvError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.write_str(&self.0)
+    }
+}
 
 pub trait CsvRowOperator {
     fn operate(
