@@ -11,6 +11,7 @@ license = "MIT"
 [dependencies]
 time = "0.3"
 chrono = "0.4"
+calamine = "0.24"
 
 [dev-dependencies]
 tempfile = "3"
