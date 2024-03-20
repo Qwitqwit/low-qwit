@@ -6,7 +6,7 @@ use std::{
 use super::{CsvError, CsvRowOperator, CsvValue};
 
 pub struct FileWritingOperator {
-    pub(crate) writer: BufWriter<File>,
+    pub writer: BufWriter<File>,
 }
 
 impl CsvRowOperator for FileWritingOperator {
