@@ -1,6 +1,6 @@
 [package]
 name = "qwitlib"
-version = "0.2.4"
+version = "0.3.0"
 edition = "2021"
 authors = ["Silen Locatelli"]
 description = "A library for dsv files"
