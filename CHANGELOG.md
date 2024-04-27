@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 
+- guard from empty lines
 
 ## [0.3.2] - 2024-03-20
 
