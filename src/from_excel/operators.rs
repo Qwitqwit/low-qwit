@@ -17,8 +17,11 @@ impl CsvRowOperator for FileWritingOperator {
     ) -> Result<(), CsvError> {
         rows.for_each(|r| {
             let values: Vec<String> = r.filter_map(|v| v.0.ok()).collect();
-            let len = values.len() - 1;
 
+            if values.is_empty(){
+                return
+            }
+            let len = values.len() - 1;
             values.iter().enumerate().for_each(|(n, v)| {
                 self.write(v);
                 if n != len {
