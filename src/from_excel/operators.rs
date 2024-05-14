@@ -3,7 +3,9 @@ use std::{
     io::{BufWriter, Write},
 };
 
-use super::{CsvError, CsvRowOperator, CsvValue};
+use crate::core::CsvError;
+use crate::core::CsvRowOperator;
+use crate::core::CsvValue;
 
 pub struct FileWritingOperator {
     pub writer: BufWriter<File>,
