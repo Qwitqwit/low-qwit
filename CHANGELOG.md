@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+### Added
+
+- csv reader function
 
 ## [0.3.3] - 2024-04-27
 
