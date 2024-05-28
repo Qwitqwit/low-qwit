@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- a count column function (one may implement a fast fail)
+- consider column count and fill row with the expected columns 
 
 ## [0.3.4] - 2024-05-14
 
