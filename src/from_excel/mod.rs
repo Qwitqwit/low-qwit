@@ -1,3 +1,4 @@
+use crate::from_excel::operators::count_columns;
 use crate::{
     core::{CsvError, CsvRow, CsvRowOperator, CsvValue},
     epoch_conversion::ExcelEpoch,
@@ -9,10 +10,19 @@ pub mod operators;
 pub fn write_range(
     range: &Range<Data>,
     mut operator: impl CsvRowOperator,
+    line_length: i32,
     sep: String,
 ) -> Result<(), CsvError> {
     let all_rows = range.rows().map(CsvRow::iterator);
-    operator.operate(sep, all_rows)
+    operator.operate(sep, line_length, all_rows)
+}
+
+pub fn get_max_line_length_of_first_x_lines(
+    range: &Range<Data>,
+    lines_to_consider: i32,
+) -> Result<i32, CsvError> {
+    let all_rows = range.rows().map(CsvRow::iterator);
+    count_columns(lines_to_consider, all_rows)
 }
 
 #[allow(clippy::cast_possible_truncation)]
@@ -23,8 +33,8 @@ impl From<Data> for CsvValue {
             Data::Empty => CsvValue(Err("Empty Value".to_owned())),
             // we write for those types
             Data::String(ref s) | Data::DateTimeIso(ref s) | Data::DurationIso(ref s) => {
-                // we replace ; with nothing
-                let escaped = s.replace(';', "");
+                // surround strings with '"' to handle separator inside
+                let escaped = format!(r#""{}""#, s);
                 CsvValue(Ok(escaped))
             }
 
@@ -35,8 +45,8 @@ impl From<Data> for CsvValue {
                 CsvValue(Ok(as_string))
             }
 
-            Data::Float(ref f) => CsvValue(Ok(f.to_string())),
             // we also just write for those
+            Data::Float(ref f) => CsvValue(Ok(f.to_string())),
             Data::Int(ref i) => CsvValue(Ok(i.to_string())),
             Data::Bool(ref b) => CsvValue(Ok(b.to_string())),
             Data::Error(ref e) => CsvValue(Err(format!(

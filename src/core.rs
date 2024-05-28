@@ -15,6 +15,7 @@ pub trait CsvRowOperator {
     fn operate(
         &mut self,
         separator: String,
+        line_length: i32,
         rows: impl Iterator<Item = impl Iterator<Item = CsvValue>>,
     ) -> Result<(), CsvError>;
 }
@@ -32,3 +33,9 @@ impl CsvRow {
 
 #[derive(Debug, Clone)]
 pub struct CsvValue(pub Result<String, String>);
+
+impl CsvValue {
+    pub fn empty() -> Self {
+        Self(Ok("".to_string()))
+    }
+}
