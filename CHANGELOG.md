@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+
+## [0.4.0] - 2024-05-28
+
 ### Added
 
 - a count column function (one may implement a fast fail)
@@ -41,7 +44,8 @@
 Function to read lines from a path
 Function to read lines from a file
 
-[Unreleased]: https://github.com/Qwitqwit/qwitlib/compare/v0.3.4...HEAD
+[Unreleased]: https://github.com/Qwitqwit/qwitlib/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/Qwitqwit/qwitlib/compare/v0.3.4...v0.4.0
 [0.3.4]: https://github.com/Qwitqwit/qwitlib/compare/v0.3.3...v0.3.4
 [0.3.3]: https://github.com/Qwitqwit/qwitlib/compare/v0.3.2...v0.3.3
 [0.3.2]: https://github.com/Qwitqwit/qwitlib/compare/v0.3.1...v0.3.2
